@@ -3,7 +3,7 @@ import { invoke } from "@tauri-apps/api/tauri";
 import classname from 'classnames/bind';
 import cls from 'classnames'
 
-import reactLogo from "../../assets/react.svg";
+import reactLogo from "@/assets/icons/win-minimize.svg";
 
 import style from "./index.module.less";
 
