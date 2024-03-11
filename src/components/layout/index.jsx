@@ -2,7 +2,7 @@ import { NavLink, Outlet } from "react-router-dom";
 import cls from "classnames"
 import classnames from "classnames/bind";
 
-import MenuLogo from "../logo-mini";
+import LogoMini from "@/assets/logo-mini.svg?react"
 import MenuTask from "@/assets/icons/menu-task.svg?react"
 import MenuAdd from "@/assets/icons/menu-add.svg?react"
 import MenuPreference from "@/assets/icons/menu-preference.svg?react"
@@ -18,14 +18,16 @@ function Layout() {
         <div className={cx('container')}>
             <div className={cx('left')}>
                 <div className={cx('logo')}>
-                    <MenuLogo />
+                    <a target="_blank" href="https://motrix.app/">
+                        <LogoMini />
+                    </a>
                 </div>
-                <NavLink to="/tasks">
+                <NavLink to="/tasks" style={{ marginTop: '24px' }}>
                     <div className={cx('icon-wrap')}>
                         <MenuTask className={cx('icon')} />
                     </div>
                 </NavLink>
-                <div className={cx('icon-wrap')}>
+                <div className={cx('icon-wrap')} style={{ marginTop: '24px' }}>
                     <MenuAdd className={cx('icon')} />
                 </div>
                 <div style={{ flex: 1 }}></div>
@@ -35,7 +37,7 @@ function Layout() {
                     </div>
                 </NavLink>
 
-                <div className={cls(cx('icon-wrap'), cx('icon-wrap-last'))}>
+                <div className={cls(cx('icon-wrap'), cx('icon-wrap-last'))} style={{ marginTop: '24px' }}>
                     <MenuAbout className={cx('icon')} />
                 </div>
             </div>
