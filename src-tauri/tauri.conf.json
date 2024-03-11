@@ -15,13 +15,18 @@
       "shell": {
         "all": false,
         "open": true
+      },
+      "window": {
+        "startDragging": true
       }
     },
     "windows": [
       {
         "title": "motrix_rs",
         "width": 800,
-        "height": 600
+        "height": 600,
+        "titleBarStyle": "Overlay",
+        "hiddenTitle": true
       }
     ],
     "security": {
