@@ -6,9 +6,11 @@
 fn greet(name: &str) -> String {
     format!("Hello, {}! You've been greeted from Rust!", name)
 }
+mod setup;
 
 fn main() {
     tauri::Builder::default()
+        .setup(setup::init)
         .invoke_handler(tauri::generate_handler![greet])
         .run(tauri::generate_context!())
         .expect("error while running tauri application");

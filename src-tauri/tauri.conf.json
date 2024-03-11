@@ -23,8 +23,8 @@
     "windows": [
       {
         "title": "motrix_rs",
-        "width": 800,
-        "height": 600,
+        "width": 1024,
+        "height": 760,
         "titleBarStyle": "Overlay",
         "hiddenTitle": true
       }

@@ -1,0 +1,35 @@
+.container-wrap {
+    display: flex;
+    flex-direction: column;
+    height: 100vh;
+    position: relative;
+}
+
+.drag-region {
+    height: 30px;
+    position: absolute;
+    top: 0;
+    left: 0;
+    right: 0;
+}
+
+.container {
+    display: flex;
+    flex: 1;
+}
+
+.left {
+    width: 78px;
+    display: flex;
+    justify-content: center;
+    background-color: rgba(0, 0, 0, 0.8);
+
+    .logo {
+        margin-top: 20px;
+    }
+}
+
+.right {
+    background-color: #fff;
+    flex: 1;
+}
