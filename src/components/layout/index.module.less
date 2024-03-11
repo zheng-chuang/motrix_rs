@@ -21,11 +21,39 @@
 .left {
     width: 78px;
     display: flex;
-    justify-content: center;
+    align-items: center;
     background-color: rgba(0, 0, 0, 0.65);
+    flex-direction: column;
 
     .logo {
         margin-top: 20px;
+        height: 32px;
+        > h1 {
+            margin: 0;
+        }
+    }
+    .icon-wrap {
+        width: 32px;
+        height: 32px;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        margin-top: 24px;
+        transition: background-color .25s;
+        border-radius: 16px;
+        &:hover {
+            background-color: hsla(0,0%,100%,.15);
+        }
+        > svg {
+            width: 20px;
+            height: 20px;
+        }
+    }
+    .icon-wrap-last {
+        margin-bottom: 24px;
+    }
+    .icon {
+        color: #fff;
     }
 }
 

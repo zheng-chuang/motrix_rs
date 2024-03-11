@@ -1,6 +1,8 @@
 import { defineConfig } from "vite";
 import react from "@vitejs/plugin-react";
+import svgr from 'vite-plugin-svgr'
 import { join } from "path";
+
 
 // https://vitejs.dev/config/
 export default defineConfig(async () => ({
@@ -9,7 +11,10 @@ export default defineConfig(async () => ({
       '@': join(__dirname, "src"),
     }
   },
-  plugins: [react()],
+  plugins: [
+    react(),
+    svgr()
+  ],
 
   // Vite options tailored for Tauri development and only applied in `tauri dev` or `tauri build`
   //
