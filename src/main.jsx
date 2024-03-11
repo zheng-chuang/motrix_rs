@@ -4,6 +4,7 @@ import { BrowserRouter } from "react-router-dom";
 import App from "./app";
 
 import "normalize.css/normalize.css"
+import './style.less'
 
 ReactDOM.createRoot(document.getElementById("root")).render(
   <React.StrictMode>
