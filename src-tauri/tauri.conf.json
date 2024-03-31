@@ -15,7 +15,26 @@
       "all": false,
       "shell": {
         "all": false,
-        "open": true
+        "open": true,
+        "sidecar": true,
+        "scope": [
+          {
+            "name": "binaries/aria2c",
+            "sidecar": true,
+            "args": [
+              {
+                "validator": "\\S+"
+              },
+              "-D"
+            ]
+          }
+        ]
+      },
+      "path": {
+        "all": true
+      },
+      "fs": {
+        "scope": ["$RESOURCE/*"]
       },
       "window": {
         "startDragging": true
@@ -44,7 +63,9 @@
         "icons/128x128@2x.png",
         "icons/icon.icns",
         "icons/icon.ico"
-      ]
+      ],
+      "externalBin": ["binaries/aria2c"],
+      "resources": ["resources/aria2.conf"]
     }
   }
 }
