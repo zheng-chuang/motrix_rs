@@ -3,13 +3,21 @@
 
 use tauri::{
     api::process::{Command, CommandEvent},
-    AppHandle, Manager,
+    AppHandle, CustomMenuItem, Icon, Manager, SystemTray, SystemTrayMenu, SystemTrayMenuItem,
 };
 
 // Learn more about Tauri commands at https://tauri.app/v1/guides/features/command
 #[tauri::command]
-fn greet(name: &str) -> String {
-    format!("Hello, {}! You've been greeted from Rust!", name)
+fn chagen_system_tray_icon(app_handle: AppHandle) {
+    let tray_handle = app_handle.tray_handle();
+    // 设置新的系统托盘图标
+    println!("dddd");
+
+    if let Err(e) = tray_handle.set_icon(tauri::Icon::Raw(
+        include_bytes!("../icons/creativity.png").to_vec(),
+    )) {
+        eprintln!("Failed to set new system tray icon: {:?}", e);
+    }
 }
 
 #[tauri::command]
@@ -56,9 +64,19 @@ fn start_aria2c(app: AppHandle, window: tauri::Window, arg1: String) {
 mod setup;
 
 fn main() {
+    let quit = CustomMenuItem::new("quit".to_string(), "退出");
+    let hide = CustomMenuItem::new("hide".to_string(), "隐藏");
+    let tray_menu = SystemTrayMenu::new()
+        .add_item(quit)
+        .add_native_item(SystemTrayMenuItem::Separator)
+        .add_item(hide);
     tauri::Builder::default()
+        .system_tray(SystemTray::new().with_menu(tray_menu))
         .setup(setup::init)
-        .invoke_handler(tauri::generate_handler![start_aria2c])
+        .invoke_handler(tauri::generate_handler![
+            start_aria2c,
+            chagen_system_tray_icon
+        ])
         .run(tauri::generate_context!())
         .expect("error while running tauri application");
 }

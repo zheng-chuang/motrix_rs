@@ -12,6 +12,8 @@ tauri-build = { version = "1", features = [] }
 
 [dependencies]
 tauri = { version = "1", features = [
+    "system-tray",
+    "icon-png",
     "path-all",
     "shell-sidecar",
     "macos-private-api",
